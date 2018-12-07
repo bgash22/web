@@ -1,0 +1,13 @@
+id
+title
+body
+coordinates
+category-subcategory[...]
+price
+category fields
+images(folder)
+user
+contact number
+time&date
+time to live
+URL

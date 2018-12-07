@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Data Table -->
+    <link rel="stylesheet" href="../dataTables/css/dataTables.bootstrap4.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+
+
+</head>
+<body>
+<% include partials/header.ejs%>
+<div id="wrapper" class="toggled">
+    <% include partials/sidebar.ejs%>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div>
+                <a href="" id="menu-toggle">
+                    <span class="glyphicon glyphicon-menu-hamburger d-sidebar-toggler"></span>
+                </a>
+            </div>
+
+            <div class="d-page-content">
+                <div class="text-center" style="margin-top:20px; margin-bottom:20px;">
+                    <h2>Place Management</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table id="orderTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Order ID</th>
+                            <th class="text-center">User Email</th>
+                            <th class="text-center">User lat</th>
+                            <th class="text-center">User lng</th>
+                            <th class="text-center">Gender</th>
+                            <th class="text-center">Dress</th>
+                            <th class="text-center">Color</th>
+                            <th class="text-center">Order Time</th>
+                            <th class="text-center">Status</th>
+                            <!-- <th class="text-center">Action</th>-->
+                        </tr>
+                        </thead>
+                        <tbody class="text-center">
+                        <% for(var i = 0; i < orderbs.length; i++){ %>
+                        <tr>
+                            <td><%= orderbs[i]._id %></td>
+                            <td class="user"><%= orderbs[i].userEmail %></td>
+                            <td class="ulat"><%= orderbs[i].ulat %></td>
+                            <td class="ulog"><%= orderbs[i].ulog %></td>
+                            <td><%= orderbs[i].gender %></td>
+                            <td><%= orderbs[i].dress %></td>
+                            <td><%= orderbs[i].color %></td>
+                            <td><%= orderbs[i].orderTime %></td>
+                            <td><%= orderbs[i].outTime %></td>
+                            <td><input type="text" name="pidPrice" class="pidPrice"></td>
+                            <td>
+                                <select class="d-order-status">
+                                    <option value = "True" selected>within 24 hours</option>
+                                    <option value = "False">within 2 days</option>
+                                    <option value = "False">within 3 days</option>
+                                </select>
+                            </td>
+                            <td><button class="pidButton">Pid</button></td>
+                        </tr>
+                        <thead>
+                        <tr>
+                            <th class="text-center">Bid ID</th>
+                            <th class="text-center">Place Name</th>
+                            <th class="text-center">price</th>
+                            <th class="text-center">avaliabilty</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Aprrove</th>
+                        </tr>
+                        </thead>
+
+                        <% for(var j = 0; j < bids.length; j++){ %>
+                        <tr>
+                            <td><%= bids[j]._id %></td>
+                            <td><%= bids[j].ownerEmail %></td>
+                            <td><%= bids[j].price %></td>
+                            <td><%= bids[j].avaliabilty %></td>
+                            <td><%= bids[j].status %></td>
+                            <td><button class="approveButton">Approve</button></td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg d-settingModalTrigger" data-toggle="modal" data-target="#mySettingModal" style="display:none;">Open Modal</button>
+            <div id="mySettingModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-center">Setting</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <div class="form-group">
+                                    <label> Old Password</label>
+                                    <input type="password" class="form-control d-oldPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label> New Password</label>
+                                    <input type="password" class="form-control d-newPassword">
+                                </div>
+                                <div style="text-align:right;">
+                                    <button type="submit" class="btn btn-warning btn-md btn-Change">Change</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+    <% include partials/footer.ejs%>
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Bootstrap Data Table -->
+<script src="../dataTables/js/jquery.dataTables.min.js"></script>
+<script src="../dataTables/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $(document).ready(function(){
+        $('#orderTable').dataTable();
+    })
+</script>
+
+
+<script>
+    $('.pidButton').on('click', function(){
+        //var placeName = $(this).data('name');
+        //var ownerEmail = req.user.local.email;
+        //var userEmail = $(this).data('email');
+        //var placeName = userEmail.substring(0, userEmail.lastIndexOf("@"));
+        //var price = $(this).data('email');
+        //var category = $(this).data('email');
+        // avaliabilty = $(this).data('email');
+        var row = $(this).closest("tr");    // Find the row
+        var userEmail = row.find(".user").text(); // Find the text
+        var price = row.find(".pidPrice").val(); // Find the text
+        var avaliabilty = row.find(".d-order-status option:selected").text();
+
+        // Let's test it out
+        //alert(price);
+        //var row = $("#orderTable").DataTable().row($(this).parents('tr'));
+        $.ajax({
+            url:'/owner/addPid',
+            data:{userEmail:userEmail, price:price, avaliabilty:avaliabilty },
+            type:'POST',
+            success: function(data) {
+                if (data.ret == true) {
+                    alert("Successfully changed");
+                }
+                else{
+                    alert("Information incorrect");
+                }
+
+            }
+        });
+    });
+
+</script>
+
+
+<script>
+    $('.d-order-delete').on('click', function(){
+        var placeName = $(this).data('name');
+        var userEmail = $(this).data('email');
+        var row = $("#orderTable").DataTable().row($(this).parents('tr'));
+        $.ajax({
+            url:'/admin/deleteOrder',
+            data:{placeName:placeName, userEmail:userEmail},
+            type:'POST',
+            success: function(data){
+                if(data.ret == true){
+                    alert("Successfully changed");
+                }
+                else{
+                    alert("Information incorrect");
+                }
+
+            }
+        });
+    });
+
+
+</script>
+
+<script>
+    $('.d-settings').on('click', function(){
+        $('.d-settingModalTrigger').trigger('click');
+    })
+    $('.btn-Change').on('click', function(){
+        var oldPassword = $('.d-oldPassword').val();
+        var newPassword = $('.d-newPassword').val();
+        $.ajax({
+            url:"/admin/changePassword",
+            data:{oldPassword:oldPassword, newPassword:newPassword},
+            type:'POST',
+            success:function(data){
+                if(data.ret == true){
+                    alert("Successfully changed");
+                    $('.close').trigger('click');
+                }
+                else{
+                    alert("Information incorrect");
+                }
+            }
+        })
+    })
+</script>
+
+</body>
+
+</html>
