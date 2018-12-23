@@ -1,323 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
 
     <!-- Data Table -->
-    <link rel="stylesheet" href="../dataTables/css/dataTables.bootstrap4.min.css">
+    <link
+      rel="stylesheet"
+      href="../dataTables/css/dataTables.bootstrap4.min.css"
+    />
 
-    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css" />
     <style media="screen">
-  input.chk-btn {
-    display: none;
-  }
-  input.chk-btn + label {
-    border: 1px solid grey;
-    background: ghoswhite;
-    padding: 5px 8px;
-    cursor: pointer;
-    border-radius: 5px;
-
-  }
-  input.chk-btn:not(:checked) + label:hover {
-    box-shadow: 0px 1px 3px;
-
-  }
-  input.chk-btn + label:active,
-  input.chk-btn:checked + label {
-    box-shadow: 0px 0px 3px inset;
-    background: #8cc472;
-
-  }
-</style>
-
-</head>
-<body>
+      input.chk-btn {
+        display: none;
+      }
+      input.chk-btn + label {
+        border: 1px solid grey;
+        background: ghoswhite;
+        padding: 5px 8px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      input.chk-btn:not(:checked) + label:hover {
+        box-shadow: 0px 1px 3px;
+      }
+      input.chk-btn + label:active,
+      input.chk-btn:checked + label {
+        box-shadow: 0px 0px 3px inset;
+        background: #8cc472;
+      }
+    </style>
+  </head>
+  <body>
     <nav class="navbar navbar-inverse" style="height:100px;">
-        <div class="container-fluid" style="position:absolute; right:0px; bottom:0px;">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);" class="d-settings">Settings</a></li>
-                                <li class="d-LogInAndOut"><a href="javascript:void(0);">Log In</a></li>
-                        </ul>
-                    </li>
-                    <li id= "active" class="active"><a href="#">Order</a></li>
-                    <li id= "active" class="active"><a href="/myorder">My Orders</a></li>
-                </ul>
-            </div>
-        </div><!-- /.container-fluid -->
-        <div id="buttons" >
-<input type="checkbox" name="filter" id="Toyota" class='chk-btn'>
-<label for='Toyota'>Toyota</label>
-<input type="checkbox" name="filter" id="Nissan" class='chk-btn'>
-<label for='Nissan'>Nissan</label>
-<input type="checkbox" name="filter" id="Ford" class='chk-btn'>
-<label for='Ford'>Ford</label>
-</div>
-<!-- <br> -->
-<div id="subToyota" >
-<input type="checkbox" name="filter" id="Camry" class='chk-btn'>
-<label for='Camry'>Camry</label>
-<input type="checkbox" name="filter" id="Corrola" class='chk-btn'>
-<label for='Corrola'>Corrola</label>
-<input type="checkbox" name="filter" id="Avalon" class='chk-btn'>
-<label for='Avalon'>Avalon</label>
-</div>
-<br>
-
-        <div style="color:#cccccc; padding-top:10px;" class="text-center">
-            <h2>Analysis App</h2>
+      <div
+        class="container-fluid"
+        style="position:absolute; right:0px; bottom:0px;"
+      >
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Account <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="javascript:void(0);" class="d-settings">Settings</a>
+                </li>
+                <li class="d-LogInAndOut">
+                  <a href="javascript:void(0);">Log In</a>
+                </li>
+              </ul>
+            </li>
+            <li id="active" class="active"><a href="#">Order</a></li>
+            <li id="active" class="active"><a href="/myorder">My Orders</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+      <div id="buttons">
+        <input type="checkbox" name="filter" id="Toyota" class="chk-btn" />
+        <label for="Toyota">Toyota</label>
+        <input type="checkbox" name="filter" id="Nissan" class="chk-btn" />
+        <label for="Nissan">Nissan</label>
+        <input type="checkbox" name="filter" id="Ford" class="chk-btn" />
+        <label for="Ford">Ford</label>
+      </div>
+      <!-- <br> -->
+      <div id="subToyota">
+        <input type="checkbox" name="filter" id="Camry" class="chk-btn" />
+        <label for="Camry">Camry</label>
+        <input type="checkbox" name="filter" id="Corrola" class="chk-btn" />
+        <label for="Corrola">Corrola</label>
+        <input type="checkbox" name="filter" id="Avalon" class="chk-btn" />
+        <label for="Avalon">Avalon</label>
+      </div>
+      <br />
+
+      <div style="color:#cccccc; padding-top:10px;" class="text-center">
+        <h2>Analysis App</h2>
+      </div>
     </nav>
 
     <div class="d-mainContent">
-        <div id="map" style='width:100%;height:100%;'>
-        </div>
+      <div id="map" style="width:100%;height:100%;"></div>
 
-        <!-- Modal Log In -->
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg d-modalTrigger" data-toggle="modal" data-target="#myModal" style="display:none;">Open Modal</button>
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Log In</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control d-email" onkeypress="showPassword(event)">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control d-password" onkeypress="showLogin(event)">
-                            </div>
-                            <div style="text-align:right" class="d-LoginWrapper">
-                                <button type="submit" class="btn btn-warning btn-md btn-login">Login</button>
-                            </div>
-                            <p>Need an account? <a href="javascript:void(0);" class="d-signUp">Signup</a></p>
-                        </div>
-                    </div>
-                </div>
+      <!-- Modal Log In -->
+      <!-- Trigger the modal with a button -->
+      <button
+        type="button"
+        class="btn btn-info btn-lg d-modalTrigger"
+        data-toggle="modal"
+        data-target="#myModal"
+        style="display:none;"
+      >
+        Open Modal
+      </button>
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center">Log In</h4>
             </div>
-        </div>
-
-
-        <!-- Modal Sign Up -->
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg d-signUpModalTrigger" data-toggle="modal" data-target="#mySignUpModal" style="display:none;">Open Modal</button>
-        <div id="mySignUpModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Sign Up</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control d-signUpEmail" >
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control d-signUpPassword">
-                            </div>
-                            <div style="text-align:right;">
-                                <button type="submit" class="btn btn-warning btn-md btn-signUp">Create</button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    class="form-control d-email"
+                    onkeypress="showPassword(event)"
+                  />
                 </div>
-            </div>
-        </div>
-
-        <!-- Settings Modal -->
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg d-settingModalTrigger" data-toggle="modal" data-target="#mySettingModal" style="display:none;">Open Modal</button>
-        <div id="mySettingModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Setting</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <div class="form-group">
-                                <label> Old Password</label>
-                                <input type="password" class="form-control d-oldPassword">
-                            </div>
-                            <div class="form-group">
-                                <label> New Password</label>
-                                <input type="password" class="form-control d-newPassword">
-                            </div>
-                            <div style="text-align:right;">
-                                <button type="submit" class="btn btn-warning btn-md btn-Change">Change</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    class="form-control d-password"
+                    onkeypress="showLogin(event)"
+                  />
                 </div>
-            </div>
-        </div>
-
-        <!-- Book Result Modal -->
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg d-bookResultModalTrigger" data-toggle="modal" data-target="#myBookResultModal" style="display:none;">Open Modal</button>
-        <div id="myBookResultModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title text-center">Result</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="d-book-result-body"></div>
-                    </div>
+                <div style="text-align:right" class="d-LoginWrapper">
+                  <button
+                    type="submit"
+                    class="btn btn-warning btn-md btn-login"
+                  >
+                    Login
+                  </button>
                 </div>
+                <p>
+                  Need an account?
+                  <a href="javascript:void(0);" class="d-signUp">Signup</a>
+                </p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Modal Select Chain -->
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg d-chainModalTrigger" data-toggle="modal" data-target="#myChainModal" style="display:none;">Open Modal</button>
-        <div id="myChainModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center">Questions</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <div class="form-group d-questionWrapper">
-                                <label>Gender :</label>
-                                <select class="q-gender" onchange = "showageWrapper()">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group d-questionWrapper d-ageWrapper">
-                                <label>age :</label>
-                                <select class="q-age" onchange = "showsickWrapper()">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="0-2 years">0-2 years</option>
-                                    <option value="3-7 years">3-7 years</option>
-                                    <option value="8-15 years">8-15 years</option>
-                                    <option value="16-25 years">16-25 years</option>
-                                    <option value="26-40 years">26-40 years</option>
-                                    <option value="41-60 years">41-60 years</option>
-                                    <option value="more than 60 years">more than 60 years</option>
-                                </select>
-                            </div>
-                            <div class="form-group d-questionWrapper d-sickWrapper">
-                                <label>sick :</label>
-                                <select class="q-sick" onchange = "showAnswerWrapper()">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="Flu">Flu</option>
-                                    <option value="Bones">Bones</option>
-                                    <option value="Digestion">Digestion</option>
-                                </select>
-                            </div>
-                            <div style="text-align:right;" class="d-AnswerWrapper">
-                                <button type="" class="btn btn-warning btn-md btn-answer">Answer</button>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Modal Sign Up -->
+      <!-- Trigger the modal with a button -->
+      <button
+        type="button"
+        class="btn btn-info btn-lg d-signUpModalTrigger"
+        data-toggle="modal"
+        data-target="#mySignUpModal"
+        style="display:none;"
+      >
+        Open Modal
+      </button>
+      <div id="mySignUpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center">Sign Up</h4>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control d-signUpEmail" />
                 </div>
-            </div>
-        </div>
-
-
-        <!-- Modal Select Chain B -->
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg d-chainModalTriggerb" data-toggle="modal" data-target="#myChainModalb" style="display:none;">Open Modal</button>
-        <div id="myChainModalb" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title text-center">Questions</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <div class="form-group d-questionWrapper">
-                                <label>Gender :</label>
-                                <select class="q-genderb" onchange = "showageWrapper()">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group d-questionWrapper d-ageWrapper">
-                                <label>age :</label>
-                                <select class="q-ageb" onchange = "showsickWrapper()">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="0-2 years">0-2 years</option>
-                                    <option value="3-7 years">3-7 years</option>
-                                    <option value="8-15 years">8-15 years</option>
-                                    <option value="16-25 years">16-25 years</option>
-                                    <option value="26-40 years">26-40 years</option>
-                                    <option value="41-60 years">41-60 years</option>
-                                    <option value="more than 60 years">more than 60 years</option>
-                                </select>
-                            </div>
-                            <div class="form-group d-questionWrapper d-sickWrapper">
-                                <label>sick :</label>
-                                <select class="q-sickb" onchange = "showAnswerWrapper()">
-                                    <option disabled selected value> -- select an option -- </option>
-                                    <option value="Flu">Flu</option>
-                                    <option value="Bones">Bones</option>
-                                    <option value="Digestion">Digestion</option>
-                                </select>
-                            </div>
-                            <div style="text-align:right;" class="d-AnswerWrapper">
-                                <button type="" class="btn btn-warning btn-md btn-answerb">Answer</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    class="form-control d-signUpPassword"
+                  />
                 </div>
+                <div style="text-align:right;">
+                  <button
+                    type="submit"
+                    class="btn btn-warning btn-md btn-signUp"
+                  >
+                    Create
+                  </button>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
+      <!-- Settings Modal -->
+      <!-- Trigger the modal with a button -->
+      <button
+        type="button"
+        class="btn btn-info btn-lg d-settingModalTrigger"
+        data-toggle="modal"
+        data-target="#mySettingModal"
+        style="display:none;"
+      >
+        Open Modal
+      </button>
+      <div id="mySettingModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center">Setting</h4>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group">
+                  <label> Old Password</label>
+                  <input type="password" class="form-control d-oldPassword" />
+                </div>
+                <div class="form-group">
+                  <label> New Password</label>
+                  <input type="password" class="form-control d-newPassword" />
+                </div>
+                <div style="text-align:right;">
+                  <button
+                    type="submit"
+                    class="btn btn-warning btn-md btn-Change"
+                  >
+                    Change
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Result Modal -->
+      <!-- Trigger the modal with a button -->
+      <button
+        type="button"
+        class="btn btn-info btn-lg d-bookResultModalTrigger"
+        data-toggle="modal"
+        data-target="#myBookResultModal"
+        style="display:none;"
+      >
+        Open Modal
+      </button>
+      <div id="myBookResultModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center">Result</h4>
+            </div>
+            <div class="modal-body"><div class="d-book-result-body"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Select Chain -->
+      <!-- Trigger the modal with a button -->
+      <button
+        type="button"
+        class="btn btn-info btn-lg d-chainModalTrigger"
+        data-toggle="modal"
+        data-target="#myChainModal"
+        style="display:none;"
+      >
+        Open Modal
+      </button>
+      <div id="myChainModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center">Questions</h4>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group d-questionWrapper">
+                  <label>Gender :</label>
+                  <select class="q-gender" onchange="showageWrapper()">
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div class="form-group d-questionWrapper d-ageWrapper">
+                  <label>age :</label>
+                  <select class="q-age" onchange="showsickWrapper()">
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
+                    <option value="0-2 years">0-2 years</option>
+                    <option value="3-7 years">3-7 years</option>
+                    <option value="8-15 years">8-15 years</option>
+                    <option value="16-25 years">16-25 years</option>
+                    <option value="26-40 years">26-40 years</option>
+                    <option value="41-60 years">41-60 years</option>
+                    <option value="more than 60 years"
+                      >more than 60 years</option
+                    >
+                  </select>
+                </div>
+                <div class="form-group d-questionWrapper d-sickWrapper">
+                  <label>sick :</label>
+                  <select class="q-sick" onchange="showAnswerWrapper()">
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
+                    <option value="Flu">Flu</option>
+                    <option value="Bones">Bones</option>
+                    <option value="Digestion">Digestion</option>
+                  </select>
+                </div>
+                <div style="text-align:right;" class="d-AnswerWrapper">
+                  <button type="" class="btn btn-warning btn-md btn-answer">
+                    Answer
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Select Chain B -->
+      <!-- Trigger the modal with a button -->
+      <button
+        type="button"
+        class="btn btn-info btn-lg d-chainModalTriggerb"
+        data-toggle="modal"
+        data-target="#myChainModalb"
+        style="display:none;"
+      >
+        Open Modal
+      </button>
+      <div id="myChainModalb" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center">Questions</h4>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group d-questionWrapper">
+                  <label>Gender :</label>
+                  <select class="q-genderb" onchange="showageWrapper()">
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div class="form-group d-questionWrapper d-ageWrapper">
+                  <label>age :</label>
+                  <select class="q-ageb" onchange="showsickWrapper()">
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
+                    <option value="0-2 years">0-2 years</option>
+                    <option value="3-7 years">3-7 years</option>
+                    <option value="8-15 years">8-15 years</option>
+                    <option value="16-25 years">16-25 years</option>
+                    <option value="26-40 years">26-40 years</option>
+                    <option value="41-60 years">41-60 years</option>
+                    <option value="more than 60 years"
+                      >more than 60 years</option
+                    >
+                  </select>
+                </div>
+                <div class="form-group d-questionWrapper d-sickWrapper">
+                  <label>sick :</label>
+                  <select class="q-sickb" onchange="showAnswerWrapper()">
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
+                    <option value="Flu">Flu</option>
+                    <option value="Bones">Bones</option>
+                    <option value="Digestion">Digestion</option>
+                  </select>
+                </div>
+                <div style="text-align:right;" class="d-AnswerWrapper">
+                  <button type="" class="btn btn-warning btn-md btn-answerb">
+                    Answer
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="footer">
-        <h4>All rights reserved. 2017</h4>
-    </div>
+    <div class="footer"><h4>All rights reserved. 2017</h4></div>
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/highcharts-more.js"></script>
@@ -328,290 +459,290 @@
         <script async defer src='https://maps.googleapis.com/maps/api/js?key=<%= mapkey %>&callback=initMap'></script> -->
 
     <script>
-        // Get Data from
-        String.prototype.replaceAll = function(search, replacement) {
-            var target = this;
-            return target.replace(new RegExp(search, 'g'), replacement);
+      // Get Data from
+      String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, "g"), replacement);
+      };
+
+      var placeData = "<%= placeData %>";
+      placeData = placeData.replaceAll("&#34;", '"');
+      placeData = placeData.replaceAll("&#39;", "'");
+
+      var places = JSON.parse(placeData);
+      //Draw Map
+      // $(window).on('resize', function(){
+      //     initMap();
+      // });
+
+      //My Position
+      var myLatLng;
+      var lati, logi;
+      var markers = [];
+      var map;
+
+      //initialize map
+      function initMap() {
+        //give hieght to map -150px of total ???
+        document.getElementById("map").style.height =
+          $(window).height() - 150 + "px";
+        //Get currunet poisition (if accepted-need to handle by button if not)
+        navigator.geolocation.getCurrentPosition(function(position) {
+          //do_something(position.coords.latitude, position.coords.longitude);
+          lati = position.coords.latitude;
+          logi = position.coords.longitude;
+          myLatLng = { lat: lati, lng: logi };
+          //first map variable
+          map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 3,
+            center: myLatLng
+            // mapTypeId: google.maps.MapTypeId.TERRAIN
+          });
+          //Set my location marker-do it with other markers
+          var myMarker = new google.maps.Marker({
+            position: myLatLng,
+            icon: "http://www.robotwoods.com/dev/misc/bluecircle.png",
+            //changed by selected language-must be variable
+            title: "My Position!"
+          });
+
+          // To add the marker to the map, call setMap();- this is just to add my location!!!
+          // myMarker.setMap(map);         //first map initialize
+          //Set-up infoWindow, would go through loop
+          var infowindow = new google.maps.InfoWindow();
+          //Start marker and infoWindow injection
+          console.log(places);
+          for (var i = 0; i < places.length; i++) {
+            //contentString would passed to infoWindow
+            var contentString =
+              //Start of tabs-not configured well
+              '<div id="d-infoWindow" class="row" style="width:650px; height: 400px;">' +
+              '<div class="tab"><button class="tablinks" onclick="openCity(event, "London")">Preventive</button> <button class="tablinks" onclick="openCity(event, "Paris")">Corrective</button></div>' +
+              //End of tabs-not configured well
+              //Start of highcharts-may be used to indicate quality of product(car-building)
+              '<div class="col-sm-6">' +
+              '<div id="my-chart" style="width: 100%; height: 400px; float: left"></div>' +
+              "</div>" +
+              //End of highcharts
+              //Start of infoWindow main-not configured well
+              '<div class="col-sm-6" style="padding-left:10%;">' +
+              '<div class="d-placeName" style="margin-top:50px; margin-bottom:10px; font-size:30px;">' +
+              places[i].name +
+              "</div>" +
+              '<div><p> Persons in queue = <div class="d-queue">' +
+              places[i].queue +
+              "</div></p></div>" +
+              '<div><p> Capacity = <div class="d-capacity">' +
+              places[i].capacity +
+              "</div></p></div>" +
+              '<div><p> expected arrival time : <div class="d-arrivalTime"></div></p></div>' +
+              '<div><p> number of minutes : <div class="d-numberMinutes"></div></p></div>' +
+              '<div><p>price = <div class="d-price">' +
+              places[i].price +
+              " </div></p></div>" +
+              '<div class="d-latitude" style="display:none;">' +
+              places[i].latitude +
+              "</div>" +
+              '<div class="d-longitude" style="display:none;">' +
+              places[i].longitude +
+              "</div>" +
+              '<div class="d-gallery" style="width:650px; height: 400px;">' +
+              '<img src="/photos/OCR.jpg">' +
+              "</div>" +
+              //End of photos part
+              //Start of button-may be used as report or like etc...
+              '<button class="btn-success" style="">BOOK</button>' +
+              //End of button
+              "</div>" +
+              "</div>";
+
+            //start of adding ads markers
+            var markerPos = {
+              lat: Number(places[i].latitude),
+              lng: Number(places[i].longitude)
+            };
+            var marker = new google.maps.Marker({
+              position: markerPos,
+              title: places[i].name,
+              icon: "/photos/parking.png",
+              map: map //Second initialize of map
+            });
+            //End of adding ads markers
+            //Start of configure clickListener- may add hoverListener
+            google.maps.event.addListener(
+              marker,
+              "click",
+              (function(marker, contentString, infowindow) {
+                return function() {
+                  infowindow.close();
+                  infowindow.setContent(contentString); //here adding infoWindow content
+                  infowindow.open(map, marker);
+                  refreshChart();
+                };
+              })(marker, contentString, infowindow)
+            );
+            //End of clickListener
+            //add marker to markers array-for cluster
+            markers.push(marker);
+            //alert(markers);
+          }
+          var markerCluster = new MarkerClusterer(map, markers, {
+            imagePath:
+              "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
+          });
+        });
+        // Add a marker clusterer to manage the markers.
+        //Third call to map-inside initMap-move it down
+
+        // var markerCluster;
+        // window.onload = initMap;
+      }
+      //End of initMap function
+
+      //Draw Chart
+      var refreshChart = function() {
+        var queue = parseInt($(".d-queue").html());
+        var capacity = parseInt($(".d-capacity").html());
+        var latitude = $(".d-latitude").html();
+        var longitude = $(".d-longitude").html();
+        var chartWidth = $("#my-chart").width();
+        var gaugeOptions = {
+          chart: {
+            type: "solidgauge"
+          },
+
+          title: "Title",
+
+          tooltip: {
+            enabled: true
+          },
+
+          pane: {
+            center: ["50%", "50%"],
+            size: chartWidth * 0.7,
+            startAngle: 0,
+            endAngle: 360,
+            background: {
+              backgroundColor: "#EEE",
+              innerRadius: "80%",
+              outerRadius: "100%",
+              borderWidth: 0
+            }
+          },
+
+          yAxis: {
+            min: 0,
+            max: 100,
+            labels: {
+              enabled: false
+            },
+
+            lineWidth: 0,
+            minorTickInterval: null,
+            tickPixelInterval: 400,
+            tickWidth: 0
+          },
+
+          plotOptions: {
+            solidgauge: {
+              innerRadius: "80%"
+            }
+          },
+
+          series: [
+            {
+              name: "Queue",
+              data: [Math.round((Number(queue) / Number(capacity)) * 100)],
+              dataLabels: {
+                enabled: false
+              }
+            }
+          ]
         };
 
-        var placeData = '<%= placeData %>';
-        placeData = placeData.replaceAll('&#34;', '"');
-        placeData = placeData.replaceAll('&#39;', "'");
+        $("#my-chart").highcharts(gaugeOptions);
 
-        var places = JSON.parse(placeData);
-        //Draw Map
-        // $(window).on('resize', function(){
-        //     initMap();
-        // });
+        //Calculate travel time-may be rise limits issue
+        //var origin1 = myLatLng;
+        var origin1 = new google.maps.LatLng(myLatLng.lat, myLatLng.lng);
+        //var origin1 = new google.maps.LatLng(55.930385, -3.118425)
+        var destinationB = new google.maps.LatLng(
+          Number(latitude),
+          Number(longitude)
+        );
+        //var destinationB = new google.maps.LatLng(50.087692, 14.421150);
+        var service = new google.maps.DistanceMatrixService();
+        service.getDistanceMatrix(
+          {
+            origins: [origin1],
+            destinations: [destinationB],
+            travelMode: "DRIVING",
+            unitSystem: google.maps.UnitSystem.METRIC,
+            avoidHighways: false,
+            avoidTolls: false
+          },
+          function(response, status) {
+            console.log(response);
+            if (response.rows[0].elements[0].status == "ZERO_RESULTS") {
+              $(".d-arrivalTime").html("No Routes");
+            } else if (response.rows[0].elements[0].status == "OK") {
+              $(".d-arrivalTime").html(
+                response.rows[0].elements[0].duration.text
+              );
+              $(".d-numberMinutes").html(
+                parseInt(response.rows[0].elements[0].duration.value / 60 / 5)
+              );
+            }
+          }
+        );
 
-        //My Position
-        var myLatLng;
-        var lati,logi;
-        var markers = [];
-        var map;
+        refreshBookButtonEvent();
+      };
+      //End of calculate travel time
 
-        //initialize map
-        function initMap() {
-          //give hieght to map -150px of total ???
-            document.getElementById('map').style.height = $(window).height() - 150 + 'px';
-            //Get currunet poisition (if accepted-need to handle by button if not)
-            navigator.geolocation.getCurrentPosition(function(position) {
-                //do_something(position.coords.latitude, position.coords.longitude);
-                lati = position.coords.latitude;
-                logi = position.coords.longitude;
-                myLatLng = {lat: lati, lng: logi};
-                //first map variable
-                map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 3,
-                  center: myLatLng
-                  // mapTypeId: google.maps.MapTypeId.TERRAIN
-                });
-                //Set my location marker-do it with other markers
-                var myMarker = new google.maps.Marker({
-                    position: myLatLng,
-                    icon: 'http://www.robotwoods.com/dev/misc/bluecircle.png',
-                    //changed by selected language-must be variable
-                    title: "My Position!"
-                });
+      //Refresh BOOK event
+      function refreshBookButtonEvent() {
+        $("#d-infoWindow button").on("click", function() {
+          var placeName = $(".d-placeName").html();
+          var queue = $(".d-queue").html();
+          var arrivalTime = $(".d-arrivalTime").html();
+          var capacity = $(".d-capacity").html();
+          var price = $(".d-price").html();
+          if (Number(queue) >= Number(capacity)) {
+            alert("This place is full");
+            return;
+          }
+          $.ajax({
+            url: "/book",
+            data: { placeName: placeName },
+            type: "POST",
+            success: function(data) {
+              if (data.ret == true) {
+                //Hide Chain Selet
+                $(".d-ageWrapper").hide();
+                $(".d-sickWrapper").hide();
+                $(".d-AnswerWrapper").hide();
 
-                // To add the marker to the map, call setMap();- this is just to add my location!!!
-                // myMarker.setMap(map);         //first map initialize
-                //Set-up infoWindow, would go through loop
-                var infowindow = new google.maps.InfoWindow();
-                //Start marker and infoWindow injection
-                for(var i = 0; i < places.length; i++){
-                  //contentString would passed to infoWindow
-                    var contentString =
-                    //Start of tabs-not configured well
-                        '<div id="d-infoWindow" class="row" style="width:650px; height: 400px;">'+
-						'<div class="tab"><button class="tablinks" onclick="openCity(event, "London")">Preventive</button> <button class="tablinks" onclick="openCity(event, "Paris")">Corrective</button></div>'+
-            //End of tabs-not configured well
-            //Start of highcharts-may be used to indicate quality of product(car-building)
-                            '<div class="col-sm-6">'+
-                                '<div id="my-chart" style="width: 100%; height: 400px; float: left"></div>'+
-                            '</div>'+
-                            //End of highcharts
-                            //Start of infoWindow main-not configured well
-                            '<div class="col-sm-6" style="padding-left:10%;">'+
-                                '<div class="d-placeName" style="margin-top:50px; margin-bottom:10px; font-size:30px;">'+places[i].name+'</div>'+
-                                '<div><p> Persons in queue = <div class="d-queue">'+places[i].queue+'</div></p></div>'+
-                                '<div><p> Capacity = <div class="d-capacity">'+places[i].capacity+'</div></p></div>'+
-                                '<div><p> expected arrival time : <div class="d-arrivalTime"></div></p></div>'+
-                                '<div><p> number of minutes : <div class="d-numberMinutes"></div></p></div>'+
-                                '<div><p>price = <div class="d-price">' + places[i].price + ' </div></p></div>'+
-                                '<div class="d-latitude" style="display:none;">'+places[i].latitude+'</div>'+
-                                '<div class="d-longitude" style="display:none;">'+places[i].longitude+'</div>'+
-                                //End of infoWindow main
-                                //Start of photos-not configured well-maybe taken up or as a tab
-                                '<div class="d-gallery" style="width:650px; height: 400px;">'+
-                                // var direc = "http://localhost:8080/photos/";
-                                // var fileextension = ".jpg";
-                                // $.ajax({
-                                //     //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-                                //     url: direc,
-                                //     success: function (data) {
-                                //         //List all .png file names in the page
-                                //         $(data).find("a:contains(" + fileextension + ")").each(function () {
-                                //             var filename = this.href.replace(window.location.host, "").replace("http://", "");
-                                //             // alert(filename);
-                                //             $(".d-gallery").append("<img src='"  + filename + "'>");
-                                //         });
-                                //     }
-                                // });
-                                '<img src="http://localhost:8080/photos/OCR.jpg">'
-                                +'</div>'+
-                                //End of photos part
-                                //Start of button-may be used as report or like etc...
-                                '<button class="btn-success" style="">BOOK</button>'+
-                                //End of button
-                            '</div>'+
-                        '</div>';
-                        //End of infoWindow
-                        //Try to add photos-delete if not needed
-                        <% /*   */ %>
-                        var direc = "http://localhost:8080/photos/";
-                        var fileextension = ".jpg";
-                        $.ajax({
-                            //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-                            url: direc,
-                            success: function (data) {
-                                //List all .png file names in the page
-                                $(data).find("a:contains(" + fileextension + ")").each(function () {
-                                    var filename = this.href.replace(window.location.host, "").replace("http://", "");
-                                    // alert(filename);
-                                    $(".d-gallery").append("<img src='"  + filename + "'>");
-                                });
-                            }
-                        });
-                        //End of try to add photos
+                //Triger Event
+                $(".d-chainModalTrigger").trigger("click");
+              } else if (data.ret == false && data.logIn == false) {
+                $(".d-modalTrigger").trigger("click");
+              } else if (data.ret == false) {
+                var resultHtml =
+                  '<p class="d-bookResult">You already booked.Book number is ' +
+                  data.number +
+                  "</p>";
+                $(".d-book-result-body").html(resultHtml);
+                $(".d-bookResultModalTrigger").trigger("click");
+              }
+            }
+          });
+        });
+      }
 
-                        //start of adding ads markers
-                    var markerPos = {lat:Number(places[i].latitude), lng:Number(places[i].longitude)};
-                    var marker = new google.maps.Marker({
-                        position: markerPos,
-                        title: places[i].name,
-                        icon: '/photos/parking.png',
-                        map: map        //Second initialize of map
-                    });
-                    //End of adding ads markers
-                    //Start of configure clickListener- may add hoverListener
-                    google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){
-                        return function() {
-                            infowindow.close();
-                            infowindow.setContent(contentString); //here adding infoWindow content
-                            infowindow.open(map,marker);
-                            refreshChart();
-                        };
-                    })(marker,contentString,infowindow));
-                    //End of clickListener
-                    //add marker to markers array-for cluster
-                    markers.push(marker);
-                    //alert(markers);
-                }
-            });
-            // Add a marker clusterer to manage the markers.
-            //Third call to map-inside initMap-move it down
-            var markerCluster = new MarkerClusterer(map, markers,
-                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-            // var markerCluster;
-            // window.onload = initMap;
-        }
-        //End of initMap function
-
-        //Draw Chart
-        var refreshChart = function(){
-            var queue = parseInt($('.d-queue').html());
-            var capacity = parseInt($('.d-capacity').html());
-            var latitude = $('.d-latitude').html();
-            var longitude = $('.d-longitude').html();
-            var chartWidth = $('#my-chart').width();
-            var gaugeOptions = {
-
-                'chart': {
-                    'type': 'solidgauge'
-                },
-
-                'title': "Title",
-
-                'tooltip': {
-                    'enabled': true
-                },
-
-                'pane': {
-                'center': ['50%', '50%'],
-                'size': chartWidth*0.7,
-                'startAngle': 0,
-                'endAngle': 360,
-                'background': {
-                    'backgroundColor': '#EEE',
-                    'innerRadius': '80%',
-                    'outerRadius': '100%',
-                    'borderWidth': 0
-                }
-                },
-
-                'yAxis': {
-                'min': 0,
-                'max': 100,
-                'labels': {
-                    'enabled': false
-                },
-
-                'lineWidth': 0,
-                'minorTickInterval': null,
-                'tickPixelInterval': 400,
-                'tickWidth': 0
-                },
-
-                'plotOptions': {
-                    'solidgauge': {
-                        'innerRadius': '80%'
-                    }
-                },
-
-                'series': [{
-                    'name': 'Queue',
-                    'data': [Math.round(Number(queue)/Number(capacity) * 100)],
-                    'dataLabels': {
-                        'enabled': false
-                    }
-                }]
-            };
-
-            $('#my-chart').highcharts(gaugeOptions);
-
-            //Calculate travel time-may be rise limits issue
-            //var origin1 = myLatLng;
-            var origin1 = new google.maps.LatLng(myLatLng.lat, myLatLng.lng);
-            //var origin1 = new google.maps.LatLng(55.930385, -3.118425)
-            var destinationB = new google.maps.LatLng(Number(latitude), Number(longitude));
-            //var destinationB = new google.maps.LatLng(50.087692, 14.421150);
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix(
-            {
-                origins: [origin1],
-                destinations: [destinationB],
-                travelMode: 'DRIVING',
-                unitSystem: google.maps.UnitSystem.METRIC,
-                avoidHighways: false,
-                avoidTolls: false
-            }, function(response, status){
-                console.log(response);
-                if(response.rows[0].elements[0].status == "ZERO_RESULTS"){
-                    $('.d-arrivalTime').html("No Routes");
-                }
-                else if(response.rows[0].elements[0].status == "OK"){
-                    $('.d-arrivalTime').html(response.rows[0].elements[0].duration.text);
-                    $('.d-numberMinutes').html(parseInt(((response.rows[0].elements[0].duration.value)/60)/5));
-                }
-            });
-
-            refreshBookButtonEvent();
-        }
-        //End of calculate travel time
-
-        //Refresh BOOK event
-        function refreshBookButtonEvent(){
-            $('#d-infoWindow button').on('click', function(){
-                var placeName = $('.d-placeName').html();
-                var queue = $('.d-queue').html();
-                var arrivalTime = $('.d-arrivalTime').html();
-                var capacity = $('.d-capacity').html();
-                var price = $('.d-price').html();
-                if(Number(queue) >= Number(capacity)) {
-                    alert("This place is full");
-                    return;
-                }
-                $.ajax({
-                    url:'/book',
-                    data:{placeName:placeName},
-                    type:'POST',
-                    success:function(data){
-                        if(data.ret == true){
-                            //Hide Chain Selet
-                            $('.d-ageWrapper').hide();
-                            $('.d-sickWrapper').hide();
-                            $('.d-AnswerWrapper').hide();
-
-                            //Triger Event
-                            $('.d-chainModalTrigger').trigger('click');
-                        }
-                         else if(data.ret == false && data.logIn == false){
-                             $('.d-modalTrigger').trigger('click');
-                        }
-                        else if(data.ret == false){
-                            var resultHtml =  '<p class="d-bookResult">You already booked.Book number is '+data.number+'</p>';
-                            $('.d-book-result-body').html(resultHtml);
-                            $('.d-bookResultModalTrigger').trigger('click');
-                        }
-                    }
-                })
-            })
-        }
-
-        //order button
-        $('#active').on('click', function(){
-            /*var placeName = $('.d-placeName').html();
+      //order button
+      $("#active").on("click", function() {
+        /*var placeName = $('.d-placeName').html();
             var queue = $('.d-queue').html();
             var arrivalTime = $('.d-arrivalTime').html();
             var capacity = $('.d-capacity').html();
@@ -620,8 +751,8 @@
                 alert("This place is full");
                 return;
             }*/
-            $('.d-chainModalTriggerb').trigger('click');
-            /*var ulat= lati;
+        $(".d-chainModalTriggerb").trigger("click");
+        /*var ulat= lati;
             var ulog= logi;
             $.ajax({
                 url:'/bbook',
@@ -647,17 +778,17 @@
                     }
                 }
             })*/
-        })
+      });
 
-        //Submit after selecting chain B
-        $('.btn-answerb').on('click', function(){
-            //var placeName = $('.d-placeName').html();
-            var gender = $('.q-genderb').val();
-            var age = $('.q-ageb').val();
-            var sick = $('.q-sickb').val();
-            var ulat= lati;
-            var ulog= logi;
-            /*var shift = $('.d-numberMinutes').html();
+      //Submit after selecting chain B
+      $(".btn-answerb").on("click", function() {
+        //var placeName = $('.d-placeName').html();
+        var gender = $(".q-genderb").val();
+        var age = $(".q-ageb").val();
+        var sick = $(".q-sickb").val();
+        var ulat = lati;
+        var ulog = logi;
+        /*var shift = $('.d-numberMinutes').html();
 
             var queue = $('.d-queue').html();
             var capacity = $('.d-capacity').html();
@@ -667,118 +798,132 @@
             }
             var bookNum = parseInt(queue)+ parseInt(shift) + 5 ;*/
 
-            $.ajax({
-                url:'/bbook',
-                data:{ulat:ulat,ulog:ulog, gender:gender, age:age, sick:sick},
-                type:'POST',
-                success:function(data){
-                    if(data.ret == true){
-                        $('.close').trigger('click');
-                        var resultHtml =  '<p class="d-bookResult">Successfully Booked. Book number is ' + '</p>';
-                        $('.d-book-result-body').html(resultHtml);
-                        $('.d-bookResultModalTrigger').trigger('click');
-                    };
-                }
-            })
-        })
-
-
-
-
-        //Submit after selecting chain
-        $('.btn-answer').on('click', function(){
-            var placeName = $('.d-placeName').html();
-            var gender = $('.q-gender').val();
-            var age = $('.q-age').val();
-            var sick = $('.q-sick').val();
-            var shift = $('.d-numberMinutes').html();
-
-            var queue = $('.d-queue').html();
-            var capacity = $('.d-capacity').html();
-            if(Number(queue) >= Number(capacity)) {
-                alert("This place is full");
-                return;
+        $.ajax({
+          url: "/bbook",
+          data: {
+            ulat: ulat,
+            ulog: ulog,
+            gender: gender,
+            age: age,
+            sick: sick
+          },
+          type: "POST",
+          success: function(data) {
+            if (data.ret == true) {
+              $(".close").trigger("click");
+              var resultHtml =
+                '<p class="d-bookResult">Successfully Booked. Book number is ' +
+                "</p>";
+              $(".d-book-result-body").html(resultHtml);
+              $(".d-bookResultModalTrigger").trigger("click");
             }
-            var bookNum = parseInt(queue)+ parseInt(shift) + 5 ;
+          }
+        });
+      });
 
-            $.ajax({
-                url:'/qbook',
-                data:{placeName:placeName, gender:gender, age:age, sick:sick, bookNum:bookNum.toString()},
-                type:'POST',
-                success:function(data){
-                    if(data.ret == true){
-                        $('.close').trigger('click');
-                        var resultHtml =  '<p class="d-bookResult">Successfully Booked. Book number is ' + bookNum + '</p>';
-                        $('.d-book-result-body').html(resultHtml);
-                        $('.d-bookResultModalTrigger').trigger('click');
-                    };
-                }
-            })
-        })
+      //Submit after selecting chain
+      $(".btn-answer").on("click", function() {
+        var placeName = $(".d-placeName").html();
+        var gender = $(".q-gender").val();
+        var age = $(".q-age").val();
+        var sick = $(".q-sick").val();
+        var shift = $(".d-numberMinutes").html();
 
+        var queue = $(".d-queue").html();
+        var capacity = $(".d-capacity").html();
+        if (Number(queue) >= Number(capacity)) {
+          alert("This place is full");
+          return;
+        }
+        var bookNum = parseInt(queue) + parseInt(shift) + 5;
 
-        //Log in Button event
-        $('.btn-login').on('click', function(){
-            var email = $('.d-email').val();
-            var password = $('.d-password').val();
-            $.ajax({
-                url:"/user/login",
-                type:"POST",
-                data:{email:email, password:password},
-                success:function(data){
-                    if(data.ret == true){
-                        $('.close').trigger('click');
-                        //Click Book button after Log in
-                        $('#d-infoWindow button').trigger('click');
-                        $('.d-LogInAndOut').html('<a href="/user/logout">Log Out</a>')
-                    }
-                    else if(data.ret == false){
-                        $('.close').trigger('click');
-                        var resultHtml =  '<p class="d-bookResult">Information incorrect</p>';
-                        $('.d-book-result-body').html(resultHtml);
-                        $('.d-bookResultModalTrigger').trigger('click');
-                    }
-                }
-            })
-        })
+        $.ajax({
+          url: "/qbook",
+          data: {
+            placeName: placeName,
+            gender: gender,
+            age: age,
+            sick: sick,
+            bookNum: bookNum.toString()
+          },
+          type: "POST",
+          success: function(data) {
+            if (data.ret == true) {
+              $(".close").trigger("click");
+              var resultHtml =
+                '<p class="d-bookResult">Successfully Booked. Book number is ' +
+                bookNum +
+                "</p>";
+              $(".d-book-result-body").html(resultHtml);
+              $(".d-bookResultModalTrigger").trigger("click");
+            }
+          }
+        });
+      });
 
-        //Login click of the dropdown menu
-        $('.d-LogInAndOut a').on('click', function(){
-            $('.d-modalTrigger').trigger('click');
-        })
+      //Log in Button event
+      $(".btn-login").on("click", function() {
+        var email = $(".d-email").val();
+        var password = $(".d-password").val();
+        $.ajax({
+          url: "/user/login",
+          type: "POST",
+          data: { email: email, password: password },
+          success: function(data) {
+            if (data.ret == true) {
+              $(".close").trigger("click");
+              //Click Book button after Log in
+              $("#d-infoWindow button").trigger("click");
+              $(".d-LogInAndOut").html('<a href="/user/logout">Log Out</a>');
+            } else if (data.ret == false) {
+              $(".close").trigger("click");
+              var resultHtml =
+                '<p class="d-bookResult">Information incorrect</p>';
+              $(".d-book-result-body").html(resultHtml);
+              $(".d-bookResultModalTrigger").trigger("click");
+            }
+          }
+        });
+      });
 
-        //Sign up from the menu
-        $('.d-signUp').on('click', function(){
-            $('.close').trigger('click');
-            $('.d-signUpModalTrigger').trigger('click');
-        })
+      //Login click of the dropdown menu
+      $(".d-LogInAndOut a").on("click", function() {
+        $(".d-modalTrigger").trigger("click");
+      });
 
-        //Sign up button
-        $('.btn-signUp').on('click', function(){
-            var email = $('.d-signUpEmail').val();
-            var password = $('.d-signUpPassword').val();
-            $.ajax({
-                url:'/user/signUp',
-                type:'POST',
-                data:{email:email, password:password},
-                success:function(data){
-                    if(data.ret == true){
-                        $('.close').trigger('click');
-                        var resultHtml =  '<p class="d-bookResult">Successfully created</p>';
-                        $('.d-book-result-body').html(resultHtml);
-                        $('.d-bookResultModalTrigger').trigger('click');
-                        //Change Menu Log in to Log out
-                        $('.d-LogInAndOut').html('<a href="/user/logout">Log Out</a>');
-                    }
-                    else{
-                        $('.close').trigger('click');
-                        var resultHtml =  '<p class="d-bookResult">You cannot use this email</p>';
-                        $('.d-book-result-body').html(resultHtml);
-                        $('.d-bookResultModalTrigger').trigger('click');
-                    }
-                }
-            })
-        })
+      //Sign up from the menu
+      $(".d-signUp").on("click", function() {
+        $(".close").trigger("click");
+        $(".d-signUpModalTrigger").trigger("click");
+      });
+
+      //Sign up button
+      $(".btn-signUp").on("click", function() {
+        var email = $(".d-signUpEmail").val();
+        var password = $(".d-signUpPassword").val();
+        $.ajax({
+          url: "/user/signUp",
+          type: "POST",
+          data: { email: email, password: password },
+          success: function(data) {
+            if (data.ret == true) {
+              $(".close").trigger("click");
+              var resultHtml =
+                '<p class="d-bookResult">Successfully created</p>';
+              $(".d-book-result-body").html(resultHtml);
+              $(".d-bookResultModalTrigger").trigger("click");
+              //Change Menu Log in to Log out
+              $(".d-LogInAndOut").html('<a href="/user/logout">Log Out</a>');
+            } else {
+              $(".close").trigger("click");
+              var resultHtml =
+                '<p class="d-bookResult">You cannot use this email</p>';
+              $(".d-book-result-body").html(resultHtml);
+              $(".d-bookResultModalTrigger").trigger("click");
+            }
+          }
+        });
+      });
     </script>
 
     <!-- <script type="text/javascript">
@@ -801,97 +946,110 @@
       </script> -->
 
     <script>
-        //Setting from the Menu
-        $('.d-settings').on('click', function(){
-            $('.d-settingModalTrigger').trigger('click');
-        })
-        $('.btn-Change').on('click', function(){
-            var oldPassword = $('.d-oldPassword').val();
-            var newPassword = $('.d-newPassword').val();
-            $.ajax({
-                url:"/admin/changePassword",
-                data:{oldPassword:oldPassword, newPassword:newPassword},
-                type:'POST',
-                success:function(data){
-                    if(data.ret == true){
-                        alert("Successfully changed");
-                        $('.close').trigger('click');
-                    }
-                    else{
-                        alert("Information incorrect");
-                    }
-                }
-            })
-        })
+      //Setting from the Menu
+      $(".d-settings").on("click", function() {
+        $(".d-settingModalTrigger").trigger("click");
+      });
+      $(".btn-Change").on("click", function() {
+        var oldPassword = $(".d-oldPassword").val();
+        var newPassword = $(".d-newPassword").val();
+        $.ajax({
+          url: "/admin/changePassword",
+          data: { oldPassword: oldPassword, newPassword: newPassword },
+          type: "POST",
+          success: function(data) {
+            if (data.ret == true) {
+              alert("Successfully changed");
+              $(".close").trigger("click");
+            } else {
+              alert("Information incorrect");
+            }
+          }
+        });
+      });
     </script>
 
     <script>
-        //Chain Show
-        function showageWrapper(){
-            $('.d-ageWrapper').show();
-        }
-        function showsickWrapper(){
-            $('.d-sickWrapper').show();
-        }
-        function showAnswerWrapper(){
-            $('.d-AnswerWrapper').show();
-        }
+      //Chain Show
+      function showageWrapper() {
+        $(".d-ageWrapper").show();
+      }
+      function showsickWrapper() {
+        $(".d-sickWrapper").show();
+      }
+      function showAnswerWrapper() {
+        $(".d-AnswerWrapper").show();
+      }
     </script>
     <script type="text/javascript">
-    document.getElementById('Toyota').onchange = function() {filterMarkers(this.id);$('#subToyota').show();};
-    document.getElementById('Nissan').onchange = function() {filterMarkers(this.id)};
-    document.getElementById('Ford').onchange = function() {filterMarkers(this.id)};
-    document.getElementById('Camry').onchange = function() {subfilterMarkers(this.id)};
-    document.getElementById('Corrola').onchange = function() {subfilterMarkers(this.id)};
-    document.getElementById('Avalon').onchange = function() {subfilterMarkers(this.id)};
+      document.getElementById("Toyota").onchange = function() {
+        filterMarkers(this.id);
+        $("#subToyota").show();
+      };
+      document.getElementById("Nissan").onchange = function() {
+        filterMarkers(this.id);
+      };
+      document.getElementById("Ford").onchange = function() {
+        filterMarkers(this.id);
+      };
+      document.getElementById("Camry").onchange = function() {
+        subfilterMarkers(this.id);
+      };
+      document.getElementById("Corrola").onchange = function() {
+        subfilterMarkers(this.id);
+      };
+      document.getElementById("Avalon").onchange = function() {
+        subfilterMarkers(this.id);
+      };
 
-    /**
-     * Function to filter markers by category
-     */
-     var placeData = '<%= placeData %>';
-     var marker;
-    filterMarkers = function (category) {
-    //    for (i = 0; i < gmarkers1.length; i++) {  //placeData.length
-          for (i = 0; i < placeData.length; i++) {  //placeData.length
+      /**
+       * Function to filter markers by category
+       */
+      var placeData = "<%= placeData %>";
+      var marker;
+      filterMarkers = function(category) {
+        //    for (i = 0; i < gmarkers1.length; i++) {  //placeData.length
+        for (i = 0; i < placeData.length; i++) {
+          //placeData.length
           //  marker = gmarkers1[i];                //
-           marker = placeData[i];
-            // If is same category or category not picked
-            if (marker.category == category || category.length === 0) {
-                marker.setVisible(true);
-            }
-            // Categories don't match
-            else {
-                marker.setVisible(false);
-            }
+          marker = placeData[i];
+          // If is same category or category not picked
+          if (marker.category == category || category.length === 0) {
+            marker.setVisible(true);
+          }
+          // Categories don't match
+          else {
+            marker.setVisible(false);
+          }
         }
-    }
+      };
 
-    /**
-     * Function to filter markers by subcategory
-     */
-    subfilterMarkers = function (subcategory) {
-    //    for (i = 0; i < gmarkers1.length; i++) {  //placeData.length
-          for (i = 0; i < placeData.length; i++) {  //placeData.length
+      /**
+       * Function to filter markers by subcategory
+       */
+      subfilterMarkers = function(subcategory) {
+        //    for (i = 0; i < gmarkers1.length; i++) {  //placeData.length
+        for (i = 0; i < placeData.length; i++) {
+          //placeData.length
           //  marker = gmarkers1[i];                //marker=placeData[i]
-            marker=placeData[i];
-            // If is same category or category not picked
-            if (marker.subcategory == subcategory || subcategory.length === 0) {
-                marker.setVisible(true);
-            }
-            // Categories don't match
-            else {
-                marker.setVisible(false);
-            }
+          marker = placeData[i];
+          // If is same category or category not picked
+          if (marker.subcategory == subcategory || subcategory.length === 0) {
+            marker.setVisible(true);
+          }
+          // Categories don't match
+          else {
+            marker.setVisible(false);
+          }
         }
-    }
-
+      };
     </script>
     <script>
-    $(document).ready(function(){
+      $(document).ready(function() {
         // $("button").click(function(){
-            $('#subToyota').hide();
+        $("#subToyota").hide();
         // });
-    });
+      });
     </script>
     <!-- <script type="text/javascript">
     var markerCluster = new MarkerClusterer(map, markers,
@@ -899,8 +1057,12 @@
     </script> -->
 
     <!-- Google map -->
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script> -->
-    <script async defer src='https://maps.googleapis.com/maps/api/js?key=<%= mapkey %>&callback=initMap'></script>
-</body>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=<%= mapkey %>&callback=initMap"
+    ></script>
+  </body>
 </html>
