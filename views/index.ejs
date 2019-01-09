@@ -468,7 +468,7 @@
       var placeData = "<%= placeData %>";
       placeData = placeData.replaceAll("&#34;", '"');
       placeData = placeData.replaceAll("&#39;", "'");
-
+      // console.log(placeData);
       var places = JSON.parse(placeData);
       //Draw Map
       // $(window).on('resize', function(){
@@ -547,7 +547,7 @@
               places[i].longitude +
               "</div>" +
               '<div class="d-gallery" style="width:650px; height: 400px;">' +
-              '<img src="/photos/OCR.jpg">' +
+              `<img src="${places[i].places?places[i].places.split(',')[0]:''}">` +
               "</div>" +
               //End of photos part
               //Start of button-may be used as report or like etc...

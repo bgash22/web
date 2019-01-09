@@ -10,17 +10,29 @@ var Gallery = require('express-photo-gallery');
 
 exports.index = function(req, res){
     placeModel.find().exec(function(err, data){
-        var placeData = "[";
+        // var placeData = "[";
+        var placeData = [];
         for(var i = 0; i < data.length; i++){
-            if(i != 0) placeData += ',';
-            var dire = data[i].dir;
-            //console.log(dire);
-            // , "gallery":"'+Gallery(dire)+'"
-            placeData += '{"name":"'+data[i].name+'", "latitude":"'+data[i].latitude+'", "longitude":"' +data[i].longitude+'", "capacity":"'+data[i].capacity+'", "queue":"'+data[i].queue+'", "price":"'+data[i].price+'" }';
+            placeData.push({
+                name: data[i].name,
+                latitude: data[i].latitude,
+                longitude: data[i].longitude,
+                capacity: data[i].capacity,
+                queue: data[i].queue,
+                price: data[i].price,
+                places: data[i].places
+            })
+            // if(i != 0) placeData += ',';
+            // var dire = data[i].dir;
+            // //console.log(dire);
+            // // , "gallery":"'+Gallery(dire)+'"
+            // placeData += '{"name":"'+data[i].name+'", "latitude":"'+data[i].latitude+'", "longitude":"'
+            //     +data[i].longitude+'", "capacity":"'+data[i].capacity+'", "queue":"'+data[i].queue+'", "price":"'
+            //     +data[i].price+'", "places":"'+data[i].places+'" }';
         }
-        placeData += "]";
-        //console.log(placeData);
-        res.render('index', {mapkey:config.mapKey, geoKey:config.geoKey, placeData:placeData});
+        // placeData += "]";
+        console.log(placeData);
+        res.render('index', {mapkey:config.mapKey, geoKey:config.geoKey, placeData:JSON.stringify(placeData).replace(/\\/g, '\\\\').replace(/"/g, '\\\"')});
     })
 }
 
@@ -31,9 +43,6 @@ exports.myorder = function(req, res){
         res.render('myorder', {orderbs:data,bids:data})
     })
 }
-
-
-
 
 //Get current time.
 function getDateTime(){

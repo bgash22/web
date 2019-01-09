@@ -11,7 +11,8 @@ var placeSchema = mongoose.Schema({
     category:String,
     subcategory:String,
     price:String,
-    dir:String
+    dir:String,
+    places: String
 });
 
 // create the model for users and expose it to our app
